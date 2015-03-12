@@ -13,3 +13,30 @@ var $circle = $('.circle');
 var $btnAppend = $('.btn-append');
 var $list = $('.list');
 
+
+$btnShowHide.on('click', function () {
+   $box.toggleClass('js-box-show-hide');
+});
+
+$btnMove.on('click', function () {
+   $diamond.toggleClass('js-diamond-move');
+});
+
+$btnCollapseExpand.on('click', function () {
+   $panel.toggleClass('js-panel-collapse-expand');
+});
+
+$btnBounce.on('click', function () {
+   $circle.addClass('js-circle-bounce');
+});
+
+$circle.on('webkitAnimationEnd animationend', function () {
+   $circle.removeClass('js-circle-bounce');
+});
+
+$btnAppend.on('click', function () {
+    var $li = $('<li>New List Item</li>')
+    $list.prepend($li);
+    $li.addClass('js-btn-append');
+
+});
